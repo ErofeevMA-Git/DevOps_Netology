@@ -8,8 +8,6 @@ for dir in /proc/[0-9]*
 do
     if [ -d $dir ] 
         then
-            echo $(basename "$dir") >> $OUTPUT_FILE
-    else
-        echo "Error"
+            echo $(basename "$dir") >> $OUTPUT_FILE 
     fi
 done

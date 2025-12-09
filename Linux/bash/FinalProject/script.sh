@@ -7,7 +7,7 @@ LOG_FILE="$script_dir/LOG.txt"
 # Очищаем файл при запуске
 > "$OUTPUT_FILE"
 
-trap 'echo "Ping exit (Ctrl+C)"; exit 1;' 2
+trap 'echo "Exit (Ctrl+C)"; exit 1;' 2
 
 if [[ $EUID -ne 0 ]]; then
 	echo "Должен запускаться c правами ROOT"
@@ -37,7 +37,7 @@ else
     echo "PID name" >> "$OUTPUT_FILE"
 fi
 
-# Читаем старые PID из предыдущего файла (если он есть где-то еще)
+# Читаем старые PID из предыдущего файла
 OLD_PIDS_FILE="$script_dir/old_pids.tmp"
 OLD_PIDS=()
 if [[ -f "$OLD_PIDS_FILE" ]]; then
